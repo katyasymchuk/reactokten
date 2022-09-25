@@ -26,3 +26,14 @@
     padding: 10px;
     border: 2px solid black;
 }
+ul{
+    position: -webkit-sticky;
+    position: sticky;
+    background: #fff;
+    text-transform: uppercase;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    top: 0;
+    background: linear-gradient(90deg, #deeaf5, #fdfdfd);
+}
