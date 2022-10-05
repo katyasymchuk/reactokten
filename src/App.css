@@ -1,38 +1,84 @@
-.App {
-  text-align: center;
+.Comment{
+  width: 500px;
+    height: 250px;
+  margin-top: 10px;
+  padding: 10px;
+  border: 2px solid black;
+}
+.Comments{
+  margin: 10px;
+  display:flex;
+  flex-wrap: wrap;
+    justify-content: space-around;
+
+}
+.Post{
+    width: 500px;
+    height: 100px;
+    margin-top: 10px;
+    padding: 10px;
+    border: 2px solid black;
+}
+.Posts{
+    margin: 10px;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+}
+ul{
+    position: -webkit-sticky;
+    position: sticky;
+    background: #fff;
+    text-transform: uppercase;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    top: 0;
+    background: linear-gradient(90deg, #deeaf5, #fdfdfd);
+}
+.UserDetails{
+    position: -webkit-sticky;
+    width: 300px;
+    position: sticky;
+    background: #fff;
+    align-items: center;
+    justify-content: center;
+    top: 150px;
+    left: 500px;
+    /*background: linear-gradient(90deg, #deeaf5, #fdfdfd);*/
+    font-size: 20px;
+    border-radius: 10px;
+    padding: 5px;
+}
+.UserDetails>h3{
+    background: linear-gradient(90deg, #deeaf5, #fdfdfd);
+
+    border-radius: 10px;
+    padding: 5px;
+}
+.UserDetails>p{
+    background: linear-gradient(90deg, #deeaf5, #fdfdfd);
+
+    border-radius: 10px;
+    padding: 5px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+.UserDetails>h4{
+    background: linear-gradient(90deg, #deeaf5, #fdfdfd);
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+    border-radius: 10px;
+    padding: 5px;
 }
+.User{
+    width: 400px;
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+    border-radius: 10px;
+    margin-top: 10px;
+    padding: 5px;
+    background: linear-gradient(90deg, #deeaf5, #fdfdfd);
 }
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.Users{
+    width: 100%;
+    /*margin: -700px 20px 30px 40px;*/
 }

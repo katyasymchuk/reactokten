@@ -1,0 +1,13 @@
+.header{
+    height: 50px;
+    position: sticky;
+    background: #fff;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    top: 0;
+    background: linear-gradient(90deg, #deeaf5, #fdfdfd);
+}
+
