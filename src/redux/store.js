@@ -1,9 +1,14 @@
 import {combineReducers, configureStore} from "@reduxjs/toolkit";
 
-import {userReducer} from "./slices";
+import {commentReducer, postReducer, userReducer} from "./slices";
+
+
+
 
 const rootReduser = combineReducers({
-    userReducer
+    userReducer,
+    postReducer,
+    commentReducer
 })
 
 

@@ -1,4 +1,4 @@
-import Comments from "../../components/Comments/Comments";
+import {Comments} from "../../components";
 
 
 const CommentsPage = () => {

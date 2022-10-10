@@ -1,18 +1,19 @@
-import {useDispatch} from "react-redux";
-
-import {userActions} from "../../redux";
+import {NavLink} from "react-router-dom";
 
 const User = ({user}) => {
-    const dispatch = useDispatch();
 
-    const {id, name, username, email} = user;
+    const {id, name} = user;
 
-    return  <div>
+    return <div className={'User'}>
         <div>id: {id}</div>
-        <div>name: {name}</div>
-        <div>username: {username}</div>
-        <div>email: {email}</div>
-        <button onClick={() => dispatch(userActions.getById({id}))}>getFromAPI</button>
+        <div>Name: {name}</div>
+        <h2>
+            <NavLink to={`/users/${id}`}>
+                More
+            </NavLink>
+        </h2>
+
+
     </div>
 
 };

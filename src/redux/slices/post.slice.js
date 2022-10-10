@@ -1,20 +1,20 @@
 import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
 
-import {usersService} from "../../services";
+import {postsService} from "../../services";
 
 const initialState = {
-    users: [],
-    currentUser: null,
+    posts: [],
+    currentPost: null,
     leading: false,
     error: null,
-    userFromAPI:null
+    postFromAPI:null
 };
 
 const getAll = createAsyncThunk(
-    'userSlice/getAll',
+    'postSlice/getAll',
     async (_, {rejectWithValue}) => {
         try {
-            const {data} = await usersService.getAll();
+            const {data} = await postsService.getAll();
             return data
         } catch (e) {
             return rejectWithValue(e.response.data)
@@ -24,10 +24,10 @@ const getAll = createAsyncThunk(
 );
 
 const getById = createAsyncThunk(
-    'userSlice/getById',
+    'postSlice/getById',
     async ({id}, {rejectWithValue}) => {
         try {
-            const {data} = await usersService.getById(id);
+            const {data} = await postsService.getById(id);
             return data
         } catch (e) {
             return rejectWithValue(e.response.data)
@@ -35,20 +35,18 @@ const getById = createAsyncThunk(
     }
 );
 
-const userSlice = createSlice({
-    name: 'userSlice',
+const postSlice = createSlice({
+    name: 'postSlice',
     initialState,
     reducers: {
-        // getAll: (state, action) => {
-        //     state.users = action.payload
-        // },
-        setCurrentUser: (state, action) => {
-            state.currentUser = action.payload
+
+        setCurrentPost: (state, action) => {
+            state.currentPost = action.payload
         }
     },
     extraReducers: builder => builder
         .addCase(getAll.fulfilled, (state, action) => {
-            state.users = action.payload
+            state.posts = action.payload
             state.loading = false
         })
         .addCase(getAll.rejected,(state, action) => {
@@ -59,7 +57,7 @@ const userSlice = createSlice({
             state.loading = true
         })
         .addCase(getById.fulfilled,(state, action) => {
-            state.userFromAPI = action.payload
+            state.postFromAPI = action.payload
         })
 
 
@@ -67,15 +65,14 @@ const userSlice = createSlice({
 })
 
 
-const {reducer: userReducer, actions: {setCurrentUser}} = userSlice;
+const {reducer: postReducer, actions: {setCurrentPost}} = postSlice;
 
-const userActions = {
+const postActions = {
     getAll,
-    setCurrentUser,
+    setCurrentPost,
     getById
 }
 export {
-    userReducer,
-    userActions
-
+    postReducer,
+    postActions
 }

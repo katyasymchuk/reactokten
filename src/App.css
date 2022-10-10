@@ -1,38 +1,74 @@
-.App {
-  text-align: center;
+body{
+  font-family: Segoe Print;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.User{
+  border: 1px solid grey;
+  border-radius: 5px;
+  margin: 5px;
+  padding: 10px;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+.User > h2{
+  font-size: 15px;
+  width: 100px;
+  background: #eaf6ff;
+  border: 1px solid grey;
+  border-radius: 5px;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
+  text-align: center;
+  justify-content:center;
 
-.App-link {
-  color: #61dafb;
 }
+.Users{
+  margin-top: 20px;
+}
+.Post{
+  width: 500px;
+  height: 120px;
+  margin: 5px;
+  padding: 10px;
+  border: 1px solid grey;
+  border-radius: 5px;
+}
+.Posts{
+  margin-top: 20px;
+  display:flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.Post > h2{
+background: #eaf6ff;
+  border: 1px solid grey;
+  border-radius: 5px;
+  align-items: center;
+  text-align: center;
+  justify-content:center;
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+.Comment{
+  width: 500px;
+  height: 120px;
+  margin: 5px;
+  padding: 10px;
+  border: 1px solid grey;
+  border-radius: 5px;
+}
+.Comments{
+  margin-top: 20px;
+  display:flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.Comment > h2{
+
+  background: #eaf6ff;
+  border: 1px solid grey;
+  border-radius: 5px;
+  align-items: center;
+  text-align: center;
+  justify-content:center;
+
 }

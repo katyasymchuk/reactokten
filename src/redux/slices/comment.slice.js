@@ -1,20 +1,20 @@
 import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
 
-import {usersService} from "../../services";
+import {commentsService} from "../../services";
 
 const initialState = {
-    users: [],
-    currentUser: null,
+    comments: [],
+    currentComment: null,
     leading: false,
     error: null,
-    userFromAPI:null
+    commentFromAPI:null
 };
 
 const getAll = createAsyncThunk(
-    'userSlice/getAll',
+    'commentSlice/getAll',
     async (_, {rejectWithValue}) => {
         try {
-            const {data} = await usersService.getAll();
+            const {data} = await commentsService.getAll();
             return data
         } catch (e) {
             return rejectWithValue(e.response.data)
@@ -24,10 +24,10 @@ const getAll = createAsyncThunk(
 );
 
 const getById = createAsyncThunk(
-    'userSlice/getById',
+    'commentSlice/getById',
     async ({id}, {rejectWithValue}) => {
         try {
-            const {data} = await usersService.getById(id);
+            const {data} = await commentsService.getById(id);
             return data
         } catch (e) {
             return rejectWithValue(e.response.data)
@@ -35,20 +35,20 @@ const getById = createAsyncThunk(
     }
 );
 
-const userSlice = createSlice({
-    name: 'userSlice',
+const commentSlice = createSlice({
+    name: 'commentSlice',
     initialState,
     reducers: {
         // getAll: (state, action) => {
-        //     state.users = action.payload
+        //     state.comments = action.payload
         // },
-        setCurrentUser: (state, action) => {
-            state.currentUser = action.payload
+        setCurrentComment: (state, action) => {
+            state.currentComment = action.payload
         }
     },
     extraReducers: builder => builder
         .addCase(getAll.fulfilled, (state, action) => {
-            state.users = action.payload
+            state.comments = action.payload
             state.loading = false
         })
         .addCase(getAll.rejected,(state, action) => {
@@ -59,7 +59,7 @@ const userSlice = createSlice({
             state.loading = true
         })
         .addCase(getById.fulfilled,(state, action) => {
-            state.userFromAPI = action.payload
+            state.commentFromAPI = action.payload
         })
 
 
@@ -67,15 +67,15 @@ const userSlice = createSlice({
 })
 
 
-const {reducer: userReducer, actions: {setCurrentUser}} = userSlice;
+const {reducer: commentReducer, actions: {setCurrentComment}} = commentSlice;
 
-const userActions = {
+const commentActions = {
     getAll,
-    setCurrentUser,
+    setCurrentComment,
     getById
 }
 export {
-    userReducer,
-    userActions
+    commentReducer,
+    commentActions
 
 }

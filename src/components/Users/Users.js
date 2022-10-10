@@ -1,4 +1,4 @@
-import {useEffect, useState} from "react";
+import {useEffect} from "react";
 import {useDispatch, useSelector} from "react-redux";
 
 import {User} from "../User/User";
@@ -12,16 +12,14 @@ const Users = () => {
 
 
     useEffect(() => {
-        // usersService.getAll().then(({data}) => dispatch(userActions.getAll(data)))
         dispatch(userActions.getAll())
     }, []);
 
     return (
-        <div>
+        <div  className={'Users'}>
             {loading&&<h1>Loading........................</h1>}
             {error&& <h1>Error</h1>}
-            <div>
-                {userFromAPI&&userFromAPI.email}</div>
+
             {users.map(user=><User key={user.id} user={user}/>)}
         </div>
     );

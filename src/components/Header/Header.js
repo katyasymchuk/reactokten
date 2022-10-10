@@ -1,8 +1,9 @@
 import css from './Header.module.css';
-import {NavLink, useNavigate} from "react-router-dom";
+
+import {NavLink} from "react-router-dom";
 
 const Header = () => {
-    const navigate = useNavigate();
+
     return (
         <div>
             <div className={css.header}>
