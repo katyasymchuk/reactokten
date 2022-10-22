@@ -1,11 +1,14 @@
-const baseURL = 'https://jsonplaceholder.typicode.com'
+const baseURL = 'https://api.themoviedb.org/3';
 
 const urls = {
-    users: '/users',
-    posts: '/posts',
-    comments: '/comments'
+    movies: `/discover/movie`,
+    movie: `/movie/`,
+    genres: `/genre/movie/list`,
+    search: `/search/movie`
 }
+
 export {
     baseURL,
     urls
 }
+// </ff>

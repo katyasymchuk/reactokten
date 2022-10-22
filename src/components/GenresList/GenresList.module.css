@@ -1,0 +1,7 @@
+.genres{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 40px;
+}
+/*// </ff>*/

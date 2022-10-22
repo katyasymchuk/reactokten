@@ -1,22 +1,21 @@
-import {combineReducers, configureStore} from "@reduxjs/toolkit";
+import {combineReducers,configureStore} from "@reduxjs/toolkit";
+import {movieReducer} from "./slices";
+import {genreReducer} from "./slices/GenreSlice";
+import {searchReducer} from "./slices/SearchSlice";
 
-import {commentReducer, postReducer, userReducer} from "./slices";
 
 
 
 
-const rootReduser = combineReducers({
-    userReducer,
-    postReducer,
-    commentReducer
+const rootReducer = combineReducers({
+    movieReducer,
+    genreReducer,
+    searchReducer
 })
 
-
 const setupStore = () => configureStore({
-    reducer: rootReduser
-});
+    reducer:rootReducer
+})
 
-export {
-    setupStore
-}
-
+export {setupStore}
+// </ff>
