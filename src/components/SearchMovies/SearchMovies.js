@@ -28,7 +28,7 @@ export default function SearchMovies(props) {
                         type="text"
                         placeholder="The name of the movie"
                         onChange={(event) => setValue(event.target.value)}
-                        value={query}
+                        // value={query}
 
                     />
 
